@@ -26,7 +26,7 @@ let package = Package(
         .target(
             name: "GlobalPackage",
             dependencies: [
-                            .product(name: "CrashReporter", package: "plcrashreporter")
+//                            .product(name: "CrashReporter", package: "plcrashreporter")
                         ],
             linkerSettings: [
                 .linkedFramework("Foundation")
