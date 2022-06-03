@@ -1,0 +1,2 @@
+# GlobalPackage
+Global package test
