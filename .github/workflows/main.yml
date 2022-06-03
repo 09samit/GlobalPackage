@@ -25,10 +25,18 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Build Package
-        run: swift build -v
+      # Build for iPhone
+      - name: Build and test ( tvOS 15.0)
+        run: xcodebuild test -scheme GlobalPackage -destination 'platform=tvOS Simulator,OS=15.0,name=Apple TV 4K (2nd generation)'
 
-      # Runs a set of commands using the runners shell
-      - name: Test Package
-        run: swift test -v
+      # test for iPhone
+      - name: Build and test ( iOS 15.0)
+        run: xcodebuild test -scheme GlobalPackage -destination 'platform=iOS Simulator,OS=15.0,name=iPhone 12 Pro'
+
+#       # Runs a single command using the runners shell
+#       - name: Build Package
+#         run: swift build -v
+
+#       # Runs a set of commands using the runners shell
+#       - name: Test Package
+#         run: swift test -v
