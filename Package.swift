@@ -18,6 +18,7 @@ let package = Package(
             targets: ["GlobalPackage"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/microsoft/plcrashreporter.git", from: "1.10.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -25,6 +26,7 @@ let package = Package(
         .target(
             name: "GlobalPackage",
             dependencies: [
+                .product(name: "CrashReporter", package: "plcrashreporter")
                         ]),
         .testTarget(
             name: "GlobalPackageTests",
